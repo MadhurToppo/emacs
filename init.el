@@ -675,9 +675,13 @@ This function is called at the very end of Spacemacs initialization."
    ;; If you edit it by hand, you could mess it up, so be careful.
    ;; Your init file should contain only one such instance.
    ;; If there is more than one, they won't work right.
-   '(custom-enabled-themes '(doom-tomorrow-day))
+   '(custom-enabled-themes '(doom-monokai-spectrum))
    '(custom-safe-themes
-     '("e1df746a4fa8ab920aafb96c39cd0ab0f1bac558eff34532f453bd32c687b9d6"
+     '("a368631abdadffb6882f9994637d7216167912311447f1ec02f9dc58e9cc62a9"
+       "e4d4cc443964b8a64defc06de3edb2363f7cb1b3c3ae2272b2c1487f626e4318"
+       "01f347a923dd21661412d4c5a7c7655bf17fb311b57ddbdbd6fce87bd7e58de6"
+       "cd69d46df6559baf9e26b47e93c0bf69b7c8d32db079c3c105d66e38e17c8cdf"
+       "e1df746a4fa8ab920aafb96c39cd0ab0f1bac558eff34532f453bd32c687b9d6"
        "599f72b66933ea8ba6fce3ae9e5e0b4e00311c2cbf01a6f46ac789227803dd96"
        "bbb13492a15c3258f29c21d251da1e62f1abb8bbd492386a673dcfab474186af"
        "5c8a1b64431e03387348270f50470f64e28dfae0084d33108c33a81c1e126ad6"
