@@ -77,7 +77,9 @@ This function should only modify configuration layer settings."
    ;; `dotspacemacs/user-config'. To use a local version of a package, use the
    ;; `:location' property: '(your-package :location "~/path/to/your-package/")
    ;; Also include the dependencies as they will not be resolved automatically.
-   dotspacemacs-additional-packages '()
+   dotspacemacs-additional-packages '(nerd-icons
+                                      treemacs-nerd-icons
+                                      nerd-icons-ivy-rich)
 
    ;; A list of packages that cannot be updated.
    dotspacemacs-frozen-packages '()
@@ -249,7 +251,7 @@ It should only modify the values of Spacemacs settings."
                                :width normal)
 
    ;; Default icons font, it can be `all-the-icons' or `nerd-icons'.
-   dotspacemacs-default-icons-font 'all-the-icons
+   dotspacemacs-default-icons-font 'nerd-icons
 
    ;; The leader key (default "SPC")
    dotspacemacs-leader-key "SPC"
@@ -581,6 +583,21 @@ This function is called at the very end of Spacemacs startup, after layer
 configuration.
 Put your configuration code here, except for variables that should be set
 before packages are loaded."
+
+  ;; Enable icons in Ivy/Counsel
+  (require 'nerd-icons-ivy-rich)
+  (nerd-icons-ivy-rich-mode 1)
+  (ivy-rich-mode 1)
+
+  ;; Treemacs Nerd Icons
+  (require 'treemacs-nerd-icons)
+  (treemacs-load-theme "nerd-icons")
+
+  ;; Make the vertical divider thin (terminal-friendly)
+  (set-face-foreground 'vertical-border "grey")
+  (set-display-table-slot standard-display-table
+                          'vertical-border
+                          (make-glyph-code ?│))
 
   ;; Org-mode customization
   ;; (setq org-hide-leading-stars t)
