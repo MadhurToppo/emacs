@@ -38,16 +38,14 @@ This function should only modify configuration layer settings."
      ;; Uncomment some layer names and press `SPC f e R' (Vim style) or
      ;; `M-m f e R' (Emacs style) to install them.
      ;; ----------------------------------------------------------------
-     ;; auto-completion
-     ;; better-defaults
      html
      lua
      emacs-lisp
      git
-     ;; helm
-     (ivy :variables ivy-enable-icons t)
+     (ivy :variables
+          ivy-enable-advanced-buffer-information t
+          ivy-enable-icons t)
      lsp
-     ;; markdown
      (markdown :variables markdown-live-preview-engine 'grip)
      multiple-cursors
      org
@@ -56,17 +54,14 @@ This function should only modify configuration layer settings."
             shell-default-shell 'vterm
             shell-default-height 30
             shell-default-position 'bottom)
-     ;; spell-checking
-     ;; syntax-checking
-     ;; version-control
      (spotify :variables
               counsel-spotify-client-id "4739882d165547169c67c9c017742955"
               counsel-spotify-client-secret "3c6ce98e6a4b43cb9bb39b26533aa2dc")
      themes-megapack
      treemacs
      java
-     ;; (java :variables java-backend 'meghanada)
-     yaml)
+     (yaml :variables yaml-enable-lsp t)
+     )
 
 
    ;; List of additional packages that will be installed without being wrapped
@@ -199,7 +194,7 @@ It should only modify the values of Spacemacs settings."
    ;; If non-nil, show file icons for entries and headings on Spacemacs home buffer.
    ;; This has no effect in terminal or if "nerd-icons" package or the font
    ;; is not installed. (default nil)
-   dotspacemacs-startup-buffer-show-icons nil
+   dotspacemacs-startup-buffer-show-icons t
 
    ;; Default major mode for a new empty buffer. Possible values are mode
    ;; names such as `text-mode'; and `nil' to use Fundamental mode.
@@ -605,6 +600,12 @@ before packages are loaded."
   ;; Disable lsp headerline breadcrumb icons
   (setq lsp-headerline-breadcrumb-icons-enable nil)
 
+  ;; Set vterm timer delay to improve performance
+  (setq vterm-timer-delay 0.005)
+
+  ;; Increase to 1 MB from default 4 KB, which is too low for TUI apps like lazygit
+  (setq read-process-output-max (* 1024 1024))
+
   ;; Org-mode customization
   ;; (setq org-hide-leading-stars t)
   (setq org-superstar-leading-bullet nil)
@@ -614,7 +615,7 @@ before packages are loaded."
 
   ;; Define todo states
   (setq org-todo-keywords
-        '((sequence "TODO(t)" "SCHEDULED(s)" "NEXT(n)" "ACTIVE(a)" "PAUSED(p)" "|" "DECLINED(x)" "DONE(D)")))
+        '((sequence "TODO(t)" "SCHEDULED(s)" "NEXT(n)" "ACTIVE(a)" "PAUSED(p)" "|" "DONE(D)" "DECLINED(x)")))
 
   ;; Set todo keyword colors
   (setq org-todo-keyword-faces
@@ -623,8 +624,8 @@ before packages are loaded."
                 ("NEXT" :foreground "blue" :weight bold)
                 ("ACTIVE" :foreground "magenta" :weight bold)
                 ("PAUSED" :foreground "violet" :weight bold)
-                ("DECLINED" :foreground "dark green" :weight bold)
-                ("DONE" :foreground "dark green" :weight bold))))
+                ("DONE" :foreground "dark green" :weight bold)
+                ("DECLINED" :foreground "dark green" :weight bold))))
 
   ;; Org-todo automatically change to done when all children are done
   (defun org-summary-todo (n-done n-not-done)
