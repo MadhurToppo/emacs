@@ -1,7 +1,7 @@
 ;;; OrgModeClockingXBar - See what you are working on ;-)
 ;;; Code
 ;;;
-(defvar orgmode-clocking-bar-tempfile "~/.OrgModeClockingXBar.txt")
+(defvar orgmode-clocking-bar-tempfile "~/.spacemacs.d/OrgModeClockingXBar/.OrgModeClockingXBar.txt")
 (defun orgmode-clocking-bar-save-tempfile ()
   "Save current Clockign to a file ~/.OrgModeClockingXBar.txt, so it can be read by OrgModeClockingXBar.py"
   (if org-clock-current-task
