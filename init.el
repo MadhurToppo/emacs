@@ -20,7 +20,7 @@ This function should only modify configuration layer settings."
    ;; installation feature and you have to explicitly list a layer in the
    ;; variable `dotspacemacs-configuration-layers' to install it.
    ;; (default 'unused)
-   dotspacemacs-enable-lazy-installation 'unused
+   dotspacemacs-enable-lazy-installation 'all
 
    ;; If non-nil then Spacemacs will ask for confirmation before installing
    ;; a layer lazily. (default t)
@@ -38,8 +38,10 @@ This function should only modify configuration layer settings."
      ;; Uncomment some layer names and press `SPC f e R' (Vim style) or
      ;; `M-m f e R' (Emacs style) to install them.
      ;; ----------------------------------------------------------------
+     syntax-checking
+     auto-completion
+     (colors :variables colors-colorize-identifiers 'all)
      html
-     lua
      emacs-lisp
      git
      (ivy :variables
@@ -47,7 +49,6 @@ This function should only modify configuration layer settings."
           ivy-enable-icons t)
      lsp
      (markdown :variables markdown-live-preview-engine 'grip)
-     multiple-cursors
      org
      (shell :variables
             close-window-with-terminal t
@@ -57,7 +58,6 @@ This function should only modify configuration layer settings."
      (spotify :variables
               counsel-spotify-client-id "4739882d165547169c67c9c017742955"
               counsel-spotify-client-secret "3c6ce98e6a4b43cb9bb39b26533aa2dc")
-     themes-megapack
      (treemacs :variables treemacs-use-git-mode 'deferred)
      java
      (yaml :variables yaml-enable-lsp t)
@@ -841,22 +841,21 @@ This function is called at the very end of Spacemacs initialization."
                 gitignore-templates gnuplot golden-ratio google-translate
                 helm-make hide-comnt highlight-indentation highlight-numbers
                 highlight-parentheses hl-todo holy-mode hungry-delete hybrid-mode
-                impatient-mode indent-guide info+ inspector ir-black-theme ivy-avy
-                ivy-hydra ivy-purpose ivy-xref ivy-yasnippet kanban link-hint
-                lorem-ipsum lsp-ivy lsp-java lsp-origami lsp-treemacs lsp-ui
-                lua-mode macrostep markdown-preview-mode markdown-toc multi-line
-                multi-term multi-vterm nameless open-junk-file org-bullets
-                org-cliplink org-contrib org-download org-kanban org-mime
-                org-pomodoro org-present org-projectile org-rainbow-tags
-                org-rich-yank org-roam org-roam-ui org-super-agenda org-superstar
-                orgit-forge overseer page-break-lines paradox password-generator
-                pcre2el popwin prettier-js pug-mode quickrun rainbow-delimiters
-                restart-emacs sass-mode scss-mode shell-pop slim-mode smeargle
-                smex space-doc spaceline spacemacs-purpose-popwin
-                spacemacs-whitespace-cleanup spotify string-edit-at-point
-                string-inflection symbol-overlay symon system-packages tagedit
-                term-cursor terminal-here toc-org treemacs-evil
-                treemacs-icons-dired treemacs-magit treemacs-persp
+                impatient-mode indent-guide info+ inspector ivy-avy ivy-hydra
+                ivy-purpose ivy-xref ivy-yasnippet kanban link-hint lorem-ipsum
+                lsp-ivy lsp-java lsp-origami lsp-treemacs lsp-ui lua-mode
+                macrostep markdown-preview-mode markdown-toc multi-line nameless
+                open-junk-file org-bullets org-cliplink org-contrib org-download
+                org-kanban org-mime org-pomodoro org-present org-projectile
+                org-rainbow-tags org-rich-yank org-roam org-roam-ui
+                org-super-agenda org-superstar orgit-forge overseer
+                page-break-lines paradox password-generator pcre2el popwin
+                prettier-js pug-mode quickrun rainbow-delimiters restart-emacs
+                sass-mode scss-mode shell-pop slim-mode smeargle smex space-doc
+                spaceline spacemacs-purpose-popwin spacemacs-whitespace-cleanup
+                spotify string-edit-at-point string-inflection symbol-overlay
+                symon system-packages tagedit term-cursor terminal-here toc-org
+                treemacs-evil treemacs-icons-dired treemacs-magit treemacs-persp
                 treemacs-projectile undo-fu undo-fu-session vi-tilde-fringe
                 volatile-highlights vundo web-beautify web-mode wgrep winum
                 writeroom-mode ws-butler yaml-mode yasnippet-snippets)))
