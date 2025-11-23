@@ -632,7 +632,7 @@ before packages are loaded."
   (setq org-todo-keyword-faces
         (quote (("TODO" :foreground "orange" :weight bold)
                 ("SCHEDULED" :foreground "light blue" :weight bold)
-                ("NEXT" :foreground "blue" :weight bold)
+                ("NEXT" :foreground "pink" :weight bold)
                 ("ACTIVE" :foreground "magenta" :weight bold)
                 ("PAUSED" :foreground "violet" :weight bold)
                 ("DONE" :foreground "dark green" :weight bold)
