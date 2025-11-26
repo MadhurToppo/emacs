@@ -52,6 +52,7 @@ This function should only modify configuration layer settings."
      lsp
      (markdown :variables markdown-live-preview-engine 'vmd)
      org
+     pdf
      (shell :variables
             close-window-with-terminal t
             shell-default-shell 'vterm
