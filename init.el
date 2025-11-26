@@ -620,11 +620,9 @@ before packages are loaded."
   ;; Disable lsp headerline breadcrumb icons
   (setq lsp-headerline-breadcrumb-icons-enable nil)
 
-  ;; Set vterm timer delay to improve performance
-  (setq vterm-timer-delay 0.005)
-
-  ;; Increase to 1 MB from default 4 KB, which is too low for TUI apps like lazygit
-  (setq read-process-output-max (* 1024 1024))
+  ;; Enable chordpro-mode for .pro files
+  (setq auto-mode-alist (cons '("\\.pro$" . chordpro-mode) auto-mode-alist))
+  (autoload 'chordpro-mode "chordpro-mode")
 
   ;; Org-mode customization
   ;; (setq org-hide-leading-stars t)
