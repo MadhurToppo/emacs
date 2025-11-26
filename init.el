@@ -81,7 +81,8 @@ This function should only modify configuration layer settings."
                                       nerd-icons-completion
                                       treemacs-nerd-icons
                                       nerd-icons-ivy-rich
-                                      chordpro-mode)
+                                      chordpro-mode
+                                      exec-path-from-shell)
 
    ;; A list of packages that cannot be updated.
    dotspacemacs-frozen-packages '()
@@ -588,6 +589,10 @@ This function is called at the very end of Spacemacs startup, after layer
 configuration.
 Put your configuration code here, except for variables that should be set
 before packages are loaded."
+
+  ;; Load PATH from shell
+  (exec-path-from-shell-initialize)
+  (exec-path-from-shell-initialize)
 
   ;; Enable icons in Ivy/Counsel
   (require 'nerd-icons-ivy-rich)
